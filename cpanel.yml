@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/nmwconst/public_html
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/mkdir $DEPLOYPATH/assets
+    - /bin/cp -R assets/* $DEPLOYPATH/assets
+  webhook:
+    url: https://ssdrsserver3.hostinginterface.eu:2083/cpsess3448143363/execute/Deployment/pull?repo=git@github.com:abdulrazak95/nmw-constructions.git
+    secret: 7b1cde126bc9b2b66fa426e5b0135978f94fb21b311348ef962b09f8bbbee94c
